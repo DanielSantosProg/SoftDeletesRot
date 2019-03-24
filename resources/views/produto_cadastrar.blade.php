@@ -14,9 +14,9 @@
             <label for="foto">Foto: </label>
             <input type = "text" class = "form-control" id="foto" name="foto">
             <label for="categoria">Categoria: </label>
-            <select class = "form-control" name = "categoria" id="categoria">
+            <select class = "form-control" name = "categoria_id" id="categoria_id">
             @foreach($categorias as $cat)
-                <option>{{$cat->nome}}</option>
+                <option value="{{ $cat->id }}">{{$cat->nome}}</option>
             @endforeach
             </select>
             <br>

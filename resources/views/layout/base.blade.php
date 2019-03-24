@@ -6,7 +6,7 @@
     <link href="{{asset('css/style.css')}}" rel = "stylesheet">
     <link href="{{asset('css/side-bar.css')}}" rel = "stylesheet">
     <meta name="csrf-token" content = "{{csrf_token()}}">
-    <title>Lojinha</title>
+    <title>Lojona Geek</title>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
@@ -16,7 +16,7 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>CRUD</h3>
+                <h3>Lojona Geek</h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -33,7 +33,7 @@
                             <a href="{{route('categorias.index')}}">Listar</a>
                         </li>
                         <li>
-                            <a href="/categorias/restaurar">Restaurar</a>
+                            <a href="{{route('categorias.indexWithTrashed')}}">Restaurar</a>
                         </li>
                     </ul>
                 </li>

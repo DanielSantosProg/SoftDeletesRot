@@ -38,7 +38,14 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produto = new Produto();
+        $produto->nome = $request->input("nome");
+        $produto->descricao = $request->input("descricao");
+        $produto->preco = $request->input("preco");
+        $produto->categoria_id = $request->input("categoria_id");
+        $produto->foto = $request->input("foto");
+        $produto->save();
+        return redirect()->route('produtos.index');
     }
 
     /**
@@ -60,7 +67,7 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+        return view('produto_editar', compact('produto'));
     }
 
     /**
@@ -72,7 +79,13 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+        $produto->nome = $request->input("nome");
+        $produto->descricao = $request->input("descricao");
+        $produto->preco = $request->input("preco");
+        $produto->categoria_id = $request->input("categoria_id");
+        $produto->foto = $request->input("foto");
+        $produto->save();
+        return redirect()->route('produtos.index');
     }
 
     /**

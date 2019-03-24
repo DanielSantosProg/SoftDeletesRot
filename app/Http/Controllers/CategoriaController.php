@@ -87,6 +87,18 @@ class CategoriaController extends Controller
     public function destroy(Categoria $categoria)
     {
         $categoria->delete();
-        return redirect("/categorias");
+        return redirect()->route('categorias.index');
     }
+
+    public function indexWithTrashed(){
+        $categorias = Categoria::onlyTrashed()->get();
+        return view('categoria-restaurar', compact('categorias'));
+    }
+
+    public function restore(Categoria $categoria) 
+    {
+        $categoria = Categoria::onlyTrashed()->find($id)->restore();
+        return redirect()->route('categorias.index');
+    }
+ 
 }
