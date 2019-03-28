@@ -95,10 +95,15 @@ class CategoriaController extends Controller
         return view('categoria-restaurar', compact('categorias'));
     }
 
-    public function restore(Categoria $categoria) 
-    {
-        $categoria = Categoria::onlyTrashed()->find($id)->restore();
+    public function restore($id) {
+        $categoria = Categoria::onlyTrashed()->find($id);
+        $categoria->restore();
         return redirect()->route('categorias.index');
-    }
- 
+    } 
+
+    public function forceDelete($id) {
+        $categoria = Categoria::onlyTrashed()->find($id);
+        $categoria->forceDelete();
+        return redirect()->route('categorias.restaurar');
+    } 
 }
