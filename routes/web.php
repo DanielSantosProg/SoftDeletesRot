@@ -21,3 +21,10 @@ Route::get('categorias/shiftdelete/{id}', 'CategoriaController@forceDelete')->na
 Route::resource('categorias', 'CategoriaController');
 Route::resource('produtos', 'ProdutoController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function(){
+    return redirect(route('login'));
+});
